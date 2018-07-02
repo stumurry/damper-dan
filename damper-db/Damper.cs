@@ -1,4 +1,4 @@
-namespace damper_dan_client {
+namespace DamperDB {
     
     public class Damper {
         public int ID { get; set; }

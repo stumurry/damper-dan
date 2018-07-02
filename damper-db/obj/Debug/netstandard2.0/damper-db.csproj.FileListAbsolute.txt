@@ -1,0 +1,8 @@
+/Users/stuartmurry/Desktop/UniversityOfUtah/Github/StuartMurry/damper-dan/damper-db/obj/Debug/netstandard2.0/damper-db.csproj.CoreCompileInputs.cache
+/Users/stuartmurry/Desktop/UniversityOfUtah/Github/StuartMurry/damper-dan/damper-db/obj/Debug/netstandard2.0/damper-db.AssemblyInfoInputs.cache
+/Users/stuartmurry/Desktop/UniversityOfUtah/Github/StuartMurry/damper-dan/damper-db/obj/Debug/netstandard2.0/damper-db.AssemblyInfo.cs
+/Users/stuartmurry/Desktop/UniversityOfUtah/Github/StuartMurry/damper-dan/damper-db/bin/Debug/netstandard2.0/damper-db.deps.json
+/Users/stuartmurry/Desktop/UniversityOfUtah/Github/StuartMurry/damper-dan/damper-db/bin/Debug/netstandard2.0/damper-db.dll
+/Users/stuartmurry/Desktop/UniversityOfUtah/Github/StuartMurry/damper-dan/damper-db/bin/Debug/netstandard2.0/damper-db.pdb
+/Users/stuartmurry/Desktop/UniversityOfUtah/Github/StuartMurry/damper-dan/damper-db/obj/Debug/netstandard2.0/damper-db.dll
+/Users/stuartmurry/Desktop/UniversityOfUtah/Github/StuartMurry/damper-dan/damper-db/obj/Debug/netstandard2.0/damper-db.pdb

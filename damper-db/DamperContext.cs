@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MySQL.Data;
 using MySQL.Data.EntityFrameworkCore.Extensions;
 
-namespace damper_dan_client {
+namespace DamperDB {
   public class DamperContext : DbContext {
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
