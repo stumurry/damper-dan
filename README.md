@@ -1,15 +1,32 @@
 # damper-dan
 
+To clone the respository:
+
+`git clone https://github.com/stumurry/damper-dan`
+
+
+
+# Damper Dan Client (Angular)
+
+A customer facing portal they can view devices where they can purchase or upgrade their services.
+
+Client interface is a .NET Core application written in C#.  It contains EntityFramework, Angular TypeScript, and uses Mysql.  Files are best viewed using Visual Studio for Mac or PC.  This application was developed and tested on a MAC.  
+
+```
+
+```
+
+# Damper Dan Inspector (React Native)
+
 # Caution for MAC users
+
+`React Native` requires some adjustments before using.
 
 Execute these commands before `npm start`
 ```
 sudo sysctl -w kern.maxfiles=5242880
 sudo sysctl -w kern.maxfilesperproc=524288
 ```
-
-
-# Damper Dan Inspector (React Native)
 
 An app that aids the inspector in testing client's devices 
 
@@ -24,17 +41,4 @@ npm start
 
 ```
 
-# Damper Dan Client (React)
 
-A customer facing portal they can view devices where they can purchase or upgrade their services.
-
-```
-npm install -g create-react-app yarn
-
-create-react-app damper-dan-client
-
-cd damper-dan-client
-
-npm start
-
-```

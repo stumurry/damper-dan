@@ -2,9 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
 using DamperDB;
+using Microsoft.AspNetCore.Mvc;
 
 namespace damper_dan_client.Controllers {
 
@@ -12,19 +11,14 @@ namespace damper_dan_client.Controllers {
     [Route ("api/jacho")]
     public class JachoController : Controller {
 
+        private DamperContext ctx;
+        public JachoController (DamperContext ctx) {
+            this.ctx = ctx;
+        }
+
         [Route ("dampers")]
-        public List<string> GetDampers () {
-
-            using (var ctx = new DamperContext ()) {
-                // var l = ctx.Dampertest.ToList();
-                // Console.WriteLine(l);
-
-            }
-
-            return new List<string> () {
-            "Hello",
-            "World"
-            };
+        public List<Dampertest> GetDampers () {
+            return ctx.Dampertest.ToList ();
         }
     }
 }
