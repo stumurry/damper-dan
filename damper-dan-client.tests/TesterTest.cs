@@ -8,9 +8,9 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Xunit;
 
 namespace damper_dan_client.tests {
-    public class JachoTests {
+    public class TesterTests {
         [Fact]
-        public void GetDampersTest () {
+        public void GetDampersTest() {
 
             var optionsBuilder = new DbContextOptionsBuilder<DamperContext>();
             optionsBuilder.UseMySql("Server=localhost;Database=tstrat_damper;User=root;Password=;");

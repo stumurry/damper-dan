@@ -9,18 +9,19 @@ using damper_dan_client.Interfaces;
 
 namespace damper_dan_client.Controllers {
 
-    // Joint Commissions Inpector
-    [Route ("api/tester")]
-    public class TesterController : Controller, Dampers {
-
+    [Route ("api/facilities")]
+    public class FacilitiesController : Controller, Dampers {
+        
         private DamperContext ctx;
-        public TesterController (DamperContext ctx) {
+        public FacilitiesController (DamperContext ctx) {
             this.ctx = ctx;
         }
 
         [Route ("dampers")]
         public List<Dampertest> GetDampers () {
-            return ctx.Dampertest.Take(3).ToList();
+            return ctx.Dampertest.ToList();
         }
+        
     }
+
 }
