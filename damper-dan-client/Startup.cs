@@ -10,7 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-// using Microsoft.EntityFrameworkCore.Infrastructure;
+using DamperDB;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace damper_dan_client
 {
@@ -28,9 +29,13 @@ namespace damper_dan_client
         {
             services.AddMvc();
 
-			// services.AddDbContextPool<DamperContext>( // replace "YourDbContext" with the class name of your DbContext
-            //     options => options.UseMySQL("Server=localhost;Database=ef;User=root;Password=123456;")
-            // );
+			services.AddDbContextPool<DamperContext>( // replace "YourDbContext" with the class name of your DbContext
+                options => options.UseMySql("Server=localhost;Database=tstrat_damper;User=root;Password=;", // replace with your Connection String
+                    mysqlOptions =>
+                    {
+                        mysqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); // replace with your Server Version and Type
+                    }
+            ));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
