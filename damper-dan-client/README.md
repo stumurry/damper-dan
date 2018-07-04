@@ -49,6 +49,10 @@ https://github.com/PomeloFoundation
 ```
     dotnet add package MySql.Data.EntityFrameworkCore -v 6.10.2-beta
 
+    dotnet add package Pomelo.EntityFrameworkCore.MySql -v 2.1.0
+
+    dotnet add package JWT --version 4.0.0
+
     dotnet restore
 
 ```
