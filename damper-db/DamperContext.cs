@@ -27,11 +27,16 @@ namespace DamperDB {
 		// public DbSet<User> User { get; set; }
 		// public DbSet<Userlog> Userlog { get; set; }
 
-		public DamperContext () { }
 
-		public DamperContext (DbContextOptions options) : base (options) {
+		public DamperContext(DbContextOptions options) : base(options)
+        {
 
-		}
+        }
+
+		// Wierd Quark. This constructor is not allowed otherwise ContextPooling cannot occur.
+		//public DamperContext () { }
+
+
 
 		// protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		// {
