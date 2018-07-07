@@ -14,14 +14,15 @@ namespace damper_dan_client.tests {
     public class FacilitiesEngineerTest {
 
         [Fact]
-        public void GetDampersTest() {
+         // dotnet test --filter "FullyQualifiedName=damper_dan_client.tests.FacilitiesEngineerTest.GetDampersTest"
+        public async void GetDampersTest() {
 
             var optionsBuilder = new DbContextOptionsBuilder<DamperContext>();
             optionsBuilder.UseMySql("Server=localhost;Database=tstrat_damper;User=root;Password=;");
 
             using (DamperContext ctx = new DamperContext(optionsBuilder.Options) ) {
                 Dampers d = new FacilitiesController(ctx);
-                d.GetDampers().ForEach(s => Console.WriteLine (s.alias_id));
+                (await d.GetDampers()).ForEach(s => Console.WriteLine (s.alias_id));
             }
         }
     }

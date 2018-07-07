@@ -9,7 +9,9 @@ using Xunit;
 
 namespace damper_dan_client.tests {
     public class MysqlTests {
+
         [Fact]
+         // dotnet test --filter "FullyQualifiedName=damper_dan_client.tests.MysqlTests.BasicConnectionTest"
         public void BasicConnectionTest () {
 
             // Within ASP Framework, the common use is DBContextPooling

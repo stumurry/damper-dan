@@ -57,9 +57,34 @@ https://github.com/PomeloFoundation
 
 ```
 
-Before you can use `dotnet ef`:
 
-`dotnet add package Microsoft.EntityFrameworkCore.Design`
+# AWS Key
+
+You will need to setup your aws keys locally.
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
+
+
+
+# AWS - Simple Notification Service (SNS)
+
+DamperDan uses push notification.  Can be done thru Pubnub or SNS. In this example we will communicate thru SNS.
+
+https://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html
+
+https://www.nuget.org/packages/AWSSDK.SimpleNotificationService/
+
+`dotnet add package AWSSDK.SimpleNotificationService -v 3.3.1.3`
+
+` dotnet restore `
+
+
+
+
+
+
+
+
 
 
 

@@ -23,7 +23,16 @@ namespace damper_dan_client.Controllers {
 
             Console.WriteLine ("Getting Dampers for /tester...");
             return await ctx.Dampertest.Take (3).ToListAsync ();
+            
+        }
+        [Route ("upload")]
+        public async Task<List<Dampertest>> PostUpload () {
 
+            Console.WriteLine("Uploading...");
+
+            Console.WriteLine ("Getting Dampers for /tester...");
+            return await ctx.Dampertest.Take (3).ToListAsync ();
+            
         }
     }
 }
