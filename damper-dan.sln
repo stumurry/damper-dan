@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damper-dan-client", "damper-dan-client\damper-dan-client.csproj", "{6606D7EB-50D2-48F4-A7FC-13E0B8D5FE48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damper-dan-client.tests", "damper-dan-client.tests\damper-dan-client.tests.csproj", "{63F592AB-CFB3-46C0-99A4-9538EF442CB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damper-dan-client-server.tests", "damper-dan-client-server.tests\damper-dan-client-server.tests.csproj", "{63F592AB-CFB3-46C0-99A4-9538EF442CB9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damper-db", "damper-db\damper-db.csproj", "{14964EF8-C62A-43D2-BEAE-6245685C52AC}"
 EndProject

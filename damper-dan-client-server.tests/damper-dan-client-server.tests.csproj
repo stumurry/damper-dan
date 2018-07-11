@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../damper-dan-client-server/damper-dan-client-server.csproj" />
+    <ProjectReference Include="../damper-db/damper-db.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.3.18.6" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="6.10.2-beta" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.0-*" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- <PackageReference Include="Microsoft.AspNetCore.App" /> -->
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.0" />
+  </ItemGroup>
+
+</Project>
