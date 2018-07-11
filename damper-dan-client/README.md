@@ -1,91 +1,27 @@
-# Damper Dan Client
+# DamperDanClient
 
-# Create Project from scratch
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-To scaffold a new project:
+## Development server
 
-```
- dotnet new angular
- npm install
- dotnet restore
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-To run the project:
+## Code scaffolding
 
-` dotnet run `
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-navigate browser to `localhost:5000`
+## Build
 
-Dotnet core support Just in time compilation, so feel free to make changes to either Angular Client or C# Controllers. 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-press `ctr + c` to exit dotnet and return back to the command line.
+## Running unit tests
 
-# Add library
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Check out Nuget's Gellery:
+## Running end-to-end tests
 
-https://www.nuget.org/
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-Once a package is found:
+## Further help
 
-` dotnet add <package>`
-
-Be sure to restore packages before running the application:
-
-` dotnet restore `
-
-You are ready to run the application with new library:
-
-` dotnet run`
-
-Its recommeneded that past this point you may consider Visual Studio Code or Visual Studio Community to open up this project.
-
-
-# Notes:
-
-https://github.com/PomeloFoundation
-
-
-```
-    dotnet add package MySql.Data.EntityFrameworkCore -v 6.10.2-beta
-
-    dotnet add package Pomelo.EntityFrameworkCore.MySql -v 2.1.0
-
-    dotnet add package JWT --version 4.0.0
-
-    dotnet restore
-
-```
-
-
-# AWS Key
-
-You will need to setup your aws keys locally.
-
-https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
-
-
-
-# AWS - Simple Notification Service (SNS)
-
-DamperDan uses push notification.  Can be done thru Pubnub or SNS. In this example we will communicate thru SNS.
-
-https://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html
-
-https://www.nuget.org/packages/AWSSDK.SimpleNotificationService/
-
-`dotnet add package AWSSDK.SimpleNotificationService -v 3.3.1.3`
-
-` dotnet restore `
-
-
-
-
-
-
-
-
-
-
-
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

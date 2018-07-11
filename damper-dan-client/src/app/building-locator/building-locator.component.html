@@ -1,0 +1,46 @@
+<div class="containerz">
+    <div class="header">
+        <app-nav name="Register"></app-nav>
+    </div>
+    <div class="left">
+        <div class="left-wrapper">
+               
+
+                <!-- this creates a google map on the page with the given lat/lng from -->
+                <!-- the component as the initial center of the map: -->
+                <agm-map [latitude]="lat" [longitude]="lng">
+                  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                </agm-map>
+                <!-- <p-gmap [options]="mapOptions" [overlays]="overlays" [style]="{'width':'100%','height':'320px'}" ></p-gmap> -->
+            <!-- <p-gmap [options]="mapOptions" [style]="{'width':'100%','height':'320px'}"></p-gmap> -->
+        </div>
+    </div>
+    <!-- <div class="center">
+        <div class="center-wrapper">
+            Center Wrapper
+        </div>
+    </div> -->
+
+    <div class="right">
+        <div class="right-wrapper">
+                <h1>{{ title }}</h1>
+        </div>
+    </div>
+    <div class="footer">
+            <div class="ui-g ui-fluid">
+                    <div class="ui-g-12 ui-md-12">
+                        <div class="ui-inputgroup">
+                            <button pButton type="button" label="Search"></button>
+                            <input type="text" pInputText placeholder="Keyword">         
+                        </div>
+                    </div>
+                    </div>
+        <!-- <div class="input-group">
+            <input id="SendText" type="text" class="form-control" placeholder="Send a message" aria-label="Type in message here" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="Send">Send</button>
+            </div>
+        </div> -->
+    </div>
+</div>
+
