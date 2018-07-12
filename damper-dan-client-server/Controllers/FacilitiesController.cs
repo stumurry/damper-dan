@@ -6,10 +6,12 @@ using damper_dan_client.Interfaces;
 using DamperDB;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cors;
 
 namespace damper_dan_client.Controllers {
 
     [Route ("api/facilities")]
+    [EnableCors("AllowSpecificOrigin")]
     public class FacilitiesController : Controller, Dampers {
 
         public DamperContext ctx;
@@ -20,6 +22,7 @@ namespace damper_dan_client.Controllers {
 
         [Route ("dampers")]
         public async Task<List<Dampertest>> GetDampers () {
+            Console.WriteLine ("Getting Dampers for /facilities...");
             return await ctx.Dampertest.Take (3).ToListAsync ();
         }
 

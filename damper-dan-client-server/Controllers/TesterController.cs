@@ -6,11 +6,13 @@ using damper_dan_client.Interfaces;
 using DamperDB;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cors;
 
 namespace damper_dan_client.Controllers {
 
     // Joint Commissions Inpector
     [Route ("api/tester")]
+    [EnableCors("AllowSpecificOrigin")]
     public class TesterController : Controller, Dampers {
         public DamperContext ctx;
 
@@ -25,14 +27,14 @@ namespace damper_dan_client.Controllers {
             return await ctx.Dampertest.Take (3).ToListAsync ();
             
         }
-        [Route ("upload")]
-        public async Task<List<Dampertest>> PostUpload () {
+        // [Route ("upload")]
+        // public async Task<List<Dampertest>> PostUpload () {
 
-            Console.WriteLine("Uploading...");
+        //     Console.WriteLine("Uploading...");
 
-            Console.WriteLine ("Getting Dampers for /tester...");
-            return await ctx.Dampertest.Take (3).ToListAsync ();
+        //     Console.WriteLine ("Getting Dampers for /tester...");
+        //     return await ctx.Dampertest.Take (3).ToListAsync ();
             
-        }
+        // }
     }
 }
