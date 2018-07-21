@@ -48,6 +48,10 @@ namespace DamperDB {
 			//     entity.Property (e => e.Name).IsRequired ();
 			//   });
 
+			modelBuilder.Entity<building>().ToTable("building"); 
+			modelBuilder.Entity<dampertest>().ToTable("dampertest"); 
+			modelBuilder.Entity<buildingfloor>().ToTable("buildingfloor"); 
+
 			
 			modelBuilder.Entity<building> ().Property (o => o.lat).HasColumnType("decimal(10,8)");
 			modelBuilder.Entity<building> ().Property (o => o.lng).HasColumnType("decimal(11,8)");
