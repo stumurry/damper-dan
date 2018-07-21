@@ -39,7 +39,7 @@ namespace damper_dan_client_server {
             services.AddCors (options => {
                 options.AddPolicy ("AllowSpecificOrigin",
                     // Allow Angular App to speak with it.
-                    builder => builder.WithOrigins ("*"));
+                    builder => builder.WithOrigins ("http://*"));
                     // builder => builder.WithOrigins ("http://localhost:4200"));
             });
 
