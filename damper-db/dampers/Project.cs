@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DamperDB {
 
-    public class Project {
+    public class project {
 
         public int id { get; set; }
-        public Customer customer { get; set; }
+        // public Customer customer { get; set; }
         public int aggregatedCount { get; set; }
         public String projectNum { get; set; }
         public String projectName { get; set; }
@@ -22,8 +22,8 @@ namespace DamperDB {
         public Boolean isEnabled { get; set; }
         public String location { get; set; }
         public String contact { get; set; }
-        public List<Userlog> userlogs { get; set; }
-        public List<Dampertest> dampertests { get; set; }
+        // public List<Userlog> userlogs { get; set; }
+        // public List<Dampertest> dampertests { get; set; }
 
         
 

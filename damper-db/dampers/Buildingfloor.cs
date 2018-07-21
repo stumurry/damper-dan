@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DamperDB {
 
-    public class Buildingfloor {
+    public class buildingfloor {
 
         public int id { get; set; }
         // public User user { get; set; }

@@ -6,14 +6,14 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 namespace DamperDB {
 	public class DamperContext : DbContext {
 
-		public DbSet<Building> Building { get; set; }
-		public DbSet<Buildingfloor> Buildingfloor { get; set; }
+		public DbSet<building> Building { get; set; }
+		public DbSet<buildingfloor> Buildingfloor { get; set; }
 		// public DbSet<Commenthistory> Commenthistory { get; set; }
 		// public DbSet<Customer> Customer { get; set; }
 		// public DbSet<Dampercomment> Dampercomment { get; set; }
 		// public DbSet<Dampermaterial> Dampermaterial { get; set; }
 		// public DbSet<Damperstatus> Damperstatus { get; set; }
-		public DbSet<Dampertest> Dampertest { get; set; }
+		public DbSet<dampertest> Dampertest { get; set; }
 		// public DbSet<Dampertestarchive> Dampertestarchive { get; set; }
 		// public DbSet<Dampertype> Dampertype { get; set; }
 		// public DbSet<Drawing> Drawing { get; set; }
@@ -49,8 +49,8 @@ namespace DamperDB {
 			//   });
 
 			
-			modelBuilder.Entity<Building> ().Property (o => o.lat).HasColumnType("decimal(10,8)");
-			modelBuilder.Entity<Building> ().Property (o => o.lng).HasColumnType("decimal(11,8)");
+			modelBuilder.Entity<building> ().Property (o => o.lat).HasColumnType("decimal(10,8)");
+			modelBuilder.Entity<building> ().Property (o => o.lng).HasColumnType("decimal(11,8)");
 
 		}
 	}

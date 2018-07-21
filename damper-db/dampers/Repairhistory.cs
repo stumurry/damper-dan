@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DamperDB {
 
-    public class Repairhistory {
+    public class repairhistory {
 
         public int id { get; set; }
-        public Dampertest dampertest { get; set; }
+        public dampertest dampertest { get; set; }
         public DateTime repairDate { get; set; }
         public String description { get; set; }
 

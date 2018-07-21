@@ -9,15 +9,15 @@ using Microsoft.EntityFrameworkCore;
 namespace damper_dan_client.Interfaces {
     public interface Dampers {
 
-        Task<List<Dampertest>> GetDampers();
+        Task<List<dampertest>> GetDampers();
 
-        Task<List<Dampertest>> GetDampersByBuilding(int building_id);
+        Task<List<dampertest>> GetDampersByBuilding(int building_id);
 
-         Task<List<Building>> GetBuildings();
+         Task<List<building>> GetBuildings();
 
-         Task<List<Buildingfloor>> GetFloorsByBuilding(int building_id);
+         Task<List<buildingfloor>> GetFloorsByBuilding(int building_id);
 
-         Task<List<Dampertest>> GetDampersByFloor(int floor_id);
+         Task<List<dampertest>> GetDampersByFloor(int floor_id);
 
     }
     

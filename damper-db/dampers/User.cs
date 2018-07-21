@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DamperDB {
 
-    public class User {
+    public class user {
 
         public int id { get; set; }
-        public Customer customer { get; set; }
-        public Role role { get; set; }
+        // public customer customer { get; set; }
+        // public role role { get; set; }
         public String userName { get; set; }
         public String password { get; set; }
         public String email { get; set; }
@@ -24,9 +24,9 @@ namespace DamperDB {
         public DateTime lastModifiedTs { get; set; }
         public bool isenabled { get; set; }
         public String sessionId { get; set; }
-        public List<Userlog> userlogs { get; set; }
-        public List<Dampertest> dampertests  { get; set; }
-        public List<Buildingfloor> buildingfloors { get; set; }
+        // public List<userlog> userlogs { get; set; }
+        // public List<dampertest> dampertests  { get; set; }
+        // public List<buildingfloor> buildingfloors { get; set; }
         public String customers { get; set; }
         public String includebuildingids { get; set; }
 
