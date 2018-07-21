@@ -13,7 +13,8 @@ namespace DamperDB {
         // public Dampermaterial dampermaterial { get; set; }
         // public Damperstatus damperstatus { get; set; }
         // public Buildingfloor buildingfloor { get; set; }
-        public int floor_id {get;set;}
+        public int? status_id { get; set; }
+        public int floor_id { get; set; }
         // public User user { get; set; }
         public int building_id { get; set; }
         public String alias_id { get; set; }

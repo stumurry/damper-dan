@@ -22,6 +22,7 @@ import { GMapModule } from "primeng/gmap";
 import { ListboxModule } from "primeng/listbox";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { DataViewModule } from "primeng/dataview";
+import { CardModule } from "primeng/card";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
@@ -53,7 +54,8 @@ import { HttpClientModule } from "@angular/common/http";
     HttpClientModule,
     ListboxModule,
     SelectButtonModule,
-    DataViewModule
+    DataViewModule,
+    CardModule
   ],
   providers: [AngularFirestore, AuthService],
   bootstrap: [AppComponent]

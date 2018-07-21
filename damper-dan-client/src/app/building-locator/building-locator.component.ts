@@ -35,18 +35,50 @@ export class BuildingLocatorComponent implements OnInit {
 
   buildings?: Building[];
 
+  IsFail(p) {
+    
+    if (p.status_id) 
+    if (p.status_id == 2 || p.status_id == 8) {
+      return true;
+    }
+    // console.log('isFail');
+    // console.log(p);
+  }
+  IsPass(p) {
+    if (p.status_id) 
+    if (p.status_id == 1 || p.status_id == 4 || p.status_id == 5)
+    // console.log('isPass');
+    // console.log(p);
+    return true;
+  }
+
+  IsNotTested(p) {
+    // console.log('isPass');
+    // console.log(p);
+    if (!p.status_id) {
+      return true;
+    }
+  }
+
   clickSelectedFloor(f) {
     console.log(f);
-
-    this.$dampers = this.http.get(`${environment.facilities}/building/${f.buildingId}/dampers`);
+    var url = `${environment.facilities}/floors/${f.id}/dampers`;
+    console.log(url)
+    this.$dampers = this.http.get(url);
     this.$dampers.subscribe((d : any) => {
       console.log(d);
-      // this.dampers = d.map(dd => {
-      //   return {
-      //     id: dd.id,
-      //     alias: dd.alias_id
-      //   };
-      // });
+      this.dampers = d.map(dd => {
+        return {
+          id: dd.id,
+          alias: dd.alias_id,
+          location : dd.location,
+          sublocation : dd.sublocation,
+          sizel : dd.sizel,
+          sizew : dd.sizew,
+          comment : dd.comments,
+          statusid : dd.status_id
+        };
+      });
 
       console.log("Lets go test some dampers on a floor.");
       console.log(d);
@@ -60,6 +92,9 @@ export class BuildingLocatorComponent implements OnInit {
     console.log(building);
     // this.$dampers = this.http.get(`${this.damperUrl}`);
     // this.$dampers.next(pipe(this.http.get(`${this.damperUrl}`)));
+
+    // clear previous list;
+    this.dampers = [];
 
     this.selectedBuilding = building;
 

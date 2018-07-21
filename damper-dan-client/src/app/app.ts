@@ -21,6 +21,12 @@ export interface Marker {
 export interface Damper {
     id : number;
     alias : string,
+    location : string,
+    sublocation : string,
+    sizel : number,
+    sizew : number,
+    comment : string,
+    statusid : number
 }
 
 export interface Floor {

@@ -8,7 +8,7 @@
 
             <!-- this creates a google map on the page with the given lat/lng from -->
             <!-- the component as the initial center of the map: -->
-            <agm-map  [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="mapClicked($event)">>
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="mapClicked($event)">>
                 <!-- <agm-marker 
                     *ngFor="let m of buildings; let i = index"
                     (markerClick)="clickedMarker(m.label, i)"
@@ -17,7 +17,8 @@
                     [label]="m.label"
                     [markerDraggable]="m.draggable"
                     (dragEnd)="markerDragEnd(m, $event)"> -->
-                <agm-marker [label]="building.AliasID" *ngFor="let building of buildings; let i = index" [latitude]="building.marker.lat" [longitude]="building.marker.lng"  (markerClick)="clickMarker(building, i)">
+                <agm-marker [label]="building.AliasID" *ngFor="let building of buildings; let i = index" [latitude]="building.marker.lat"
+                    [longitude]="building.marker.lng" (markerClick)="clickMarker(building, i)">
                     <agm-info-window>
                         <strong>{{ building.marker.label }}</strong>
                     </agm-info-window>
@@ -40,7 +41,55 @@
             <p-selectButton [options]="floors" [(ngModel)]="selectedFloor" (click)="clickSelectedFloor(selectedFloor)"></p-selectButton>
 
             <hr />
-            
+
+            <p-dataView [value]="dampers">
+                <!-- <p-header>
+                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                </p-header>
+                <p-footer>
+                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                </p-footer> -->
+                <ng-template let-car pTemplate="listItem">
+                    <div>
+
+                        <p-card>
+
+                            <p-header>
+                                <p-card>
+                                    <p-header>
+                                        <h3 [ngClass]="{'red': IsFail(car), 'green': IsPass(car), 'blue': IsNotTested(car) }" >{{car.alias}}</h3>
+                                    </p-header>
+                                    <p-footer>
+                                        <p-card>
+                                            <p-header>
+                                                <img src="Card" src="assets/images/Damper.jpg" style="width:25%">
+                                            </p-header>
+                                            <p-footer>
+                                               {{car.sizel}} x {{car.sizew}}
+                                            </p-footer>
+                                        </p-card>
+                                        
+                                        
+                                    </p-footer>
+                                </p-card>
+                            </p-header>
+                            <div>
+                                <p>{{car.location}}</p>
+                                <p>{{car.sublocation}}</p>
+                                <p>{{car.comment}}</p>
+                                
+                            </div>
+                            <p-footer>
+                                <button pButton type="button" label="Submit Repair Ticket" icon="pi pi-check" style="margin-right: .25em"></button>
+                                <button pButton type="button" label="Cancel" icon="pi pi-times" class="ui-button-secondary"></button>
+                            </p-footer>
+
+                        </p-card>
+
+                    </div>
+                </ng-template>
+            </p-dataView>
+
         </div>
     </div>
     <div class="footer">
