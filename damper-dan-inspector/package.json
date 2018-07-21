@@ -1,5 +1,5 @@
 {
-  "name": "damper-dan-inspector",
+  "name": "DD-react-native-app",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -21,6 +21,9 @@
   "dependencies": {
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "react-native-elements": "^0.19.1",
+    "react-navigation": "^2.8.0",
+    "tcomb-form-native": "^0.6.15"
   }
 }
