@@ -12,7 +12,11 @@ export const environment = {
     projectId: "zekes-44376",
     storageBucket: "zekes-44376.appspot.com",
     messagingSenderId: "977375997610"
-  }
+  },
+
+  GoogleMapKey : "AIzaSyB0U8UcaRCdpkk-45jlLOpuqsjr3PsJtts",
+
+  facilities : 'http://localhost:5000/api/facilities'
 };
 
 /*

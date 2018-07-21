@@ -22,9 +22,34 @@ namespace damper_dan_client.Controllers {
 
         [Route ("dampers")]
         public async Task<List<Dampertest>> GetDampers () {
-            Console.WriteLine ("Getting Dampers for /facilities...");
+            Console.WriteLine ("Getting Dampers for /jacho...");
             return await ctx.Dampertest.Take (3).ToListAsync ();
         }
+
+        [Route ("building/{building_id}/dampers")]
+        public async Task<List<Dampertest>> GetDampersByBuilding(int building_id) {
+            Console.WriteLine ("Getting dampers by floor for /facilities...");
+            return await ctx.Dampertest.Where(s => s.building_id == building_id).ToListAsync ();
+        }
+
+        [Route ("buildings")]
+        public async Task<List<Building>> GetBuildings() {
+            Console.WriteLine ("Getting Buildings for /facilities...");
+            return await ctx.Building.ToListAsync ();
+        }
+
+        [Route ("buildings/{building_id}/floors")]
+        public async Task<List<Buildingfloor>> GetFloorsByBuilding(int building_id){
+            Console.WriteLine ("Getting Floors for /facilities...");
+            return await ctx.Buildingfloor.Where(s => s.building_id == building_id).ToListAsync ();
+        }
+
+        [Route ("floors/{floorId}/dampers")]
+        public async Task<List<Dampertest>> GetDampersByFloor(int floorId){
+            Console.WriteLine ("Getting dampers by floor for /facilities...");
+            return await ctx.Dampertest.Where(s => s.floor_id == floorId).ToListAsync ();
+        }
+        
 
     }
 

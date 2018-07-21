@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damper-dan-client", "damper-dan-client\damper-dan-client.csproj", "{6606D7EB-50D2-48F4-A7FC-13E0B8D5FE48}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damper-dan-client-server.tests", "damper-dan-client-server.tests\damper-dan-client-server.tests.csproj", "{63F592AB-CFB3-46C0-99A4-9538EF442CB9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damper-db", "damper-db\damper-db.csproj", "{14964EF8-C62A-43D2-BEAE-6245685C52AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damper-dan-client-server", "damper-dan-client-server\damper-dan-client-server.csproj", "{593E2E5D-2B04-49FC-8A22-47DDA11946DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,5 +58,17 @@ Global
 		{14964EF8-C62A-43D2-BEAE-6245685C52AC}.Release|x64.Build.0 = Release|Any CPU
 		{14964EF8-C62A-43D2-BEAE-6245685C52AC}.Release|x86.ActiveCfg = Release|Any CPU
 		{14964EF8-C62A-43D2-BEAE-6245685C52AC}.Release|x86.Build.0 = Release|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Debug|x64.Build.0 = Debug|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Debug|x86.Build.0 = Debug|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Release|x64.ActiveCfg = Release|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Release|x64.Build.0 = Release|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{593E2E5D-2B04-49FC-8A22-47DDA11946DD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

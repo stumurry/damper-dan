@@ -20,13 +20,36 @@ namespace damper_dan_client.Controllers {
             this.ctx = ctx;
         }
 
-        [Route ("dampers")]
+       [Route ("dampers")]
         public async Task<List<Dampertest>> GetDampers () {
-
-            Console.WriteLine ("Getting Dampers for /tester...");
+            Console.WriteLine ("Getting Dampers for /jacho...");
             return await ctx.Dampertest.Take (3).ToListAsync ();
-            
         }
+
+        [Route ("building/{building_id}/dampers")]
+        public async Task<List<Dampertest>> GetDampersByBuilding(int building_id) {
+            Console.WriteLine ("Getting dampers by floor for /jacho...");
+            return await ctx.Dampertest.Where(s => s.building_id == building_id).ToListAsync ();
+        }
+
+        [Route ("buildings")]
+        public async Task<List<Building>> GetBuildings() {
+            Console.WriteLine ("Getting Buildings for /jacho...");
+            return await ctx.Building.ToListAsync ();
+        }
+
+        [Route ("floors")]
+        public async Task<List<Buildingfloor>> GetFloorsByBuilding(int building_id){
+            Console.WriteLine ("Getting Floors for /jacho...");
+            return await ctx.Buildingfloor.Where(s => s.building_id == building_id).ToListAsync ();
+        }
+
+        [Route ("floors/{floor_id}/dampers")]
+        public async Task<List<Dampertest>> GetDampersByFloor(int floor_id){
+            Console.WriteLine ("Getting dampers by floor for /jacho...");
+            return await ctx.Dampertest.Where(s => s.floor_id == floor_id).ToListAsync ();
+        }
+        
         // [Route ("upload")]
         // public async Task<List<Dampertest>> PostUpload () {
 

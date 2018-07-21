@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "268cab2479ca0fa49822437b5bd13858fe16c966"
+    "signature": "482526edc1c61e79e2ca9381b30de28bba38be92"
   },
   "compilationOptions": {
     "defines": [
@@ -29,6 +29,7 @@
           "Microsoft.NETCore.App": "2.1.0",
           "MySql.Data.EntityFrameworkCore": "6.10.2-beta",
           "Pomelo.EntityFrameworkCore.MySql": "2.1.0",
+          "System.Data.Entity.Repository": "2.0.0.1",
           "damper-db": "1.0.0"
         },
         "runtime": {
@@ -68,6 +69,17 @@
         },
         "compile": {
           "lib/netstandard1.3/AWSSDK.S3.dll": {}
+        }
+      },
+      "EntityFramework/5.0.0": {
+        "runtime": {
+          "lib/net45/EntityFramework.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20627.0"
+          }
+        },
+        "compile": {
+          "lib/net45/EntityFramework.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.1.0": {
@@ -395,6 +407,20 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Text.RegularExpressions": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Data.Entity.Repository/2.0.0.1": {
+        "dependencies": {
+          "EntityFramework": "5.0.0"
+        },
+        "runtime": {
+          "lib/net45/System.Data.Entity.Repository.dll": {
+            "assemblyVersion": "2.0.0.1",
+            "fileVersion": "2.0.0.1"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Data.Entity.Repository.dll": {}
         }
       },
       "System.Diagnostics.TextWriterTraceListener/4.3.0": {
@@ -4100,6 +4126,13 @@
       "path": "awssdk.s3/3.3.18.6",
       "hashPath": "awssdk.s3.3.3.18.6.nupkg.sha512"
     },
+    "EntityFramework/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WYfgJWKg/RjwU8pzZkImD9DsV+J1nqDcIGp1S0/bdnElKBmAaUC2nmq/QQAcco32KyQQWnLgJNiDzIOz2xWFbQ==",
+      "path": "entityframework/5.0.0",
+      "hashPath": "entityframework.5.0.0.nupkg.sha512"
+    },
     "Microsoft.NETCore.App/2.1.0": {
       "type": "package",
       "serviceable": true,
@@ -4218,6 +4251,13 @@
       "sha512": "sha512-lm6E3T5u7BOuEH0u18JpbJHxBfOJPuCyl4Kg1RH10ktYLp5uEEE1xKrHW56/We4SnZpGAuCc9N0MJpSDhTHZGQ==",
       "path": "system.data.common/4.3.0",
       "hashPath": "system.data.common.4.3.0.nupkg.sha512"
+    },
+    "System.Data.Entity.Repository/2.0.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MnYUvHPcOAUGIyOzKR4A6Kd918VkCjKpfFCQoNdjY6LO4y1QwrwWZtdmOs2B3wozTYfJgPWKpIeW3ZHn+ylgrA==",
+      "path": "system.data.entity.repository/2.0.0.1",
+      "hashPath": "system.data.entity.repository.2.0.0.1.nupkg.sha512"
     },
     "System.Diagnostics.TextWriterTraceListener/4.3.0": {
       "type": "package",

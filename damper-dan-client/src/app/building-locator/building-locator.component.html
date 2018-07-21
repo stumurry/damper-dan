@@ -4,14 +4,26 @@
     </div>
     <div class="left">
         <div class="left-wrapper">
-               
 
-                <!-- this creates a google map on the page with the given lat/lng from -->
-                <!-- the component as the initial center of the map: -->
-                <agm-map [latitude]="lat" [longitude]="lng">
-                  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-                </agm-map>
-                <!-- <p-gmap [options]="mapOptions" [overlays]="overlays" [style]="{'width':'100%','height':'320px'}" ></p-gmap> -->
+
+            <!-- this creates a google map on the page with the given lat/lng from -->
+            <!-- the component as the initial center of the map: -->
+            <agm-map  [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="mapClicked($event)">>
+                <!-- <agm-marker 
+                    *ngFor="let m of buildings; let i = index"
+                    (markerClick)="clickedMarker(m.label, i)"
+                    [latitude]="m.lat"
+                    [longitude]="m.lng"
+                    [label]="m.label"
+                    [markerDraggable]="m.draggable"
+                    (dragEnd)="markerDragEnd(m, $event)"> -->
+                <agm-marker [label]="building.AliasID" *ngFor="let building of buildings; let i = index" [latitude]="building.marker.lat" [longitude]="building.marker.lng"  (markerClick)="clickMarker(building, i)">
+                    <agm-info-window>
+                        <strong>{{ building.marker.label }}</strong>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+            <!-- <p-gmap [options]="mapOptions" [overlays]="overlays" [style]="{'width':'100%','height':'320px'}" ></p-gmap> -->
             <!-- <p-gmap [options]="mapOptions" [style]="{'width':'100%','height':'320px'}"></p-gmap> -->
         </div>
     </div>
@@ -23,18 +35,23 @@
 
     <div class="right">
         <div class="right-wrapper">
-                <h1>{{ title }}</h1>
+            <h1>{{ selectedBuilding?.buildingName }}</h1>
+            <!-- <p-listbox [options]="floors" [(ngModel)]="selectedFloor" ></p-listbox> -->
+            <p-selectButton [options]="floors" [(ngModel)]="selectedFloor" (click)="clickSelectedFloor(selectedFloor)"></p-selectButton>
+
+            <hr />
+            
         </div>
     </div>
     <div class="footer">
-            <div class="ui-g ui-fluid">
-                    <div class="ui-g-12 ui-md-12">
-                        <div class="ui-inputgroup">
-                            <button pButton type="button" label="Search"></button>
-                            <input type="text" pInputText placeholder="Keyword">         
-                        </div>
-                    </div>
-                    </div>
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-12 ui-md-12">
+                <div class="ui-inputgroup">
+                    <button pButton type="button" label="Search"></button>
+                    <input type="text" pInputText placeholder="Keyword">
+                </div>
+            </div>
+        </div>
         <!-- <div class="input-group">
             <input id="SendText" type="text" class="form-control" placeholder="Send a message" aria-label="Type in message here" aria-describedby="basic-addon2">
             <div class="input-group-append">
@@ -43,4 +60,3 @@
         </div> -->
     </div>
 </div>
-
