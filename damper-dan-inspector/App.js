@@ -15,6 +15,8 @@ const temperature = 0;
 const altitude = 0;
 const humidity = 0;
 
+const backgroundImage = './assets/images/damperblursmall.png';
+
 pubnub.addListener({
   status: function (statusEvent) {
     if (statusEvent.category === "PNConnectedCategory") {
@@ -91,7 +93,7 @@ class LoginForm extends Component {
 class Banner extends Component {
   render() {
     return (
-      <View style={{ flex: .5, flexDirection: 'row', paddingTop: 15 }}>
+      <View style={{ flex: .3, flexDirection: 'row', paddingTop: 15 }}>
         {/*<Image
           source={this.props.src}
           style={{ flex: .5 }}
@@ -198,6 +200,7 @@ class BuildingScreen extends Component {
   }
 
   render() {
+    const resizeMode = 'cover';
     return (
       <View style={styles.container}>
         <Text style={styles.select}>Select a Building</Text>
@@ -371,7 +374,15 @@ const styles = StyleSheet.create({
   },
   button: {
     paddingBottom: 10
+  },
+  MainContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: null,
+    height: null,
   }
+
 });
 
 const pass = () => {
