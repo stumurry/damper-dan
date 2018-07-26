@@ -198,7 +198,7 @@ class BuildingScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Select a Building</Text>
+        <Text style={styles.select}>Select a Building</Text>
         <FlatList
           data={this.state.dataSource}
           renderItem={({ item }) => <View><Button title={item.building_name} onPress={() => this.props.navigation.navigate('FloorList')} /><Text></Text></View>}
@@ -234,7 +234,7 @@ class FloorScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Select a Floor</Text>
+        <Text style={styles.select}>Select a Floor</Text>
         <FlatList
           data={this.state.dataSource}
           renderItem={({ item }) => <View key={item.id}><Button title={item.floor_name} onPress={() => this.props.navigation.navigate('DamperList')} /><Text></Text></View>}
@@ -269,7 +269,7 @@ class DamperScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Select a Damper to see details</Text>
+        <Text style={styles.select}>Select a Damper to see details</Text>
         <FlatList
           data={this.state.dataSource}
           renderItem={({ item }) => <View><Button title={item.alias_id + " - " + item.location} onPress={() => this.props.navigation.navigate('Details')} /><Text></Text></View>}
@@ -361,6 +361,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fafafa',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  select: {
+    margin: 5,
+    fontWeight: '700'
   }
 });
 
