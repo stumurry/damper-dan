@@ -91,12 +91,12 @@ class LoginForm extends Component {
 class Banner extends Component {
   render() {
     return (
-      <View style={{ flex: .5, flexDirection: 'row' }}>
-        <Image
+      <View style={{ flex: .5, flexDirection: 'row', paddingTop: 15 }}>
+        {/*<Image
           source={this.props.src}
           style={{ flex: .5 }}
-        />
-        <Text style={{ fontWeight: '500'}}> LOREM IPSUM BUILDING 1</Text>
+        />*/}
+        <Text style={{ fontWeight: '500' }}> LOREM IPSUM BUILDING 1</Text>
       </View>
     );
   }
@@ -143,12 +143,12 @@ class DamperInfo extends Component {
         <Text>Location:</Text>
         <Text>1 FOOT WEST OF ELEVATORS THRU NORTH WALL</Text>
         <Text>SOUTH EAST CORRIDOR ROOM 201</Text>
-        <View style={{paddingTop: 10}}>
-        <Button
-          title="Cycle"
-          onPress={cycleDamper}
-          style={{ flex: 1 }}
-        />
+        <View style={{ paddingTop: 10 }}>
+          <Button
+            title="Cycle"
+            onPress={cycleDamper}
+            style={{ flex: 1 }}
+          />
         </View>
         <Image
           source={this.props.src}
@@ -175,24 +175,24 @@ class LoginScreen extends Component {
 }
 
 class BuildingScreen extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {};
   }
 
-  componentDidMount(){
+  componentDidMount() {
     return fetch('https://bqdor7fpq8.execute-api.us-east-1.amazonaws.com/prod/')
       .then((response) => response.json())
       .then((responseJson) => {
 
         this.setState({
           dataSource: responseJson,
-        }, function(){
+        }, function () {
 
         });
 
       })
-      .catch((error) =>{
+      .catch((error) => {
         console.error(error);
       });
   }
@@ -211,24 +211,24 @@ class BuildingScreen extends Component {
 }
 
 class FloorScreen extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {};
   }
 
-  componentDidMount(){
+  componentDidMount() {
     return fetch('https://d0l131z8pi.execute-api.us-east-1.amazonaws.com/prod?buildingid=27')
       .then((response) => response.json())
       .then((responseJson) => {
 
         this.setState({
           dataSource: responseJson,
-        }, function(){
+        }, function () {
 
         });
 
       })
-      .catch((error) =>{
+      .catch((error) => {
         console.error(error);
       });
   }
@@ -247,24 +247,24 @@ class FloorScreen extends Component {
 }
 
 class DamperScreen extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {};
   }
 
-  componentDidMount(){
+  componentDidMount() {
     return fetch('https://fwolhnn6u7.execute-api.us-east-1.amazonaws.com/prod/?floorid=179')
       .then((response) => response.json())
       .then((responseJson) => {
 
         this.setState({
           dataSource: responseJson,
-        }, function(){
+        }, function () {
 
         });
 
       })
-      .catch((error) =>{
+      .catch((error) => {
         console.error(error);
       });
   }
@@ -307,7 +307,7 @@ class DetailsScreen extends Component {
   render() {
     let imgSrc = 'data:image/jpeg;base64,' + imageSource;
     const samplePic = {
-      uri: 'https://martech.zone/wp-content/uploads/2010/06/example-logo.png'
+      uri: 'https://images.homedepot-static.com/productImages/96691c30-8dfb-49fd-92c9-845897f903c8/svn/speedi-collar-starting-collars-sc-12d-64_1000.jpg', width: 100, height: 100
     };
     const damperPic = {
       uri: imgSrc
@@ -368,11 +368,10 @@ const styles = StyleSheet.create({
     margin: 5,
     fontWeight: '700',
     fontSize: 20
-  }, 
+  },
   button: {
     paddingBottom: 10
   }
-
 });
 
 const pass = () => {
