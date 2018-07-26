@@ -174,19 +174,75 @@ class LoginScreen extends Component {
 
 class BuildingScreen extends Component {
   render() {
-    var buildingJSON = fetch('https://bqdor7fpq8.execute-api.us-east-1.amazonaws.com/prod/')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        return responseJson;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // var buildingJSON = fetch('https://bqdor7fpq8.execute-api.us-east-1.amazonaws.com/prod/')
+    //   .then((response) => response.json())
+    //   .then((responseJson) => {
+    //     return responseJson;
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
     return (
       <View style={styles.container}>
         <Text>Select a Building</Text>
         <FlatList
-          data={buildingJSON}
+          data={[{
+            "id": 1,
+            "key": "1",
+            "alias_id": "RH",
+            "building_name": "Rivington",
+            "address1": "45 Rivington St.",
+            "address2": "",
+            "city": "New York",
+            "state": "NY ",
+            "zip": null,
+            "poc": "Jerome Lucas",
+            "poc_phone": "212-539-6258",
+            "ho": null, "bo": null,
+            "last_date_tested_ts": null,
+            "isenabled": false,
+            "occupancy": null,
+            "lat": 40.72069500,
+            "lng": -73.99112900
+          }, {
+            "id": 3,
+            "key": "3",
+            "alias_id": "BR",
+            "building_name": "Basking Ridge",
+            "address1": "136 Mountainview Blvd",
+            "address2": "",
+            "city": "Basking Ridge",
+            "state": "NJ",
+            "zip": "07920",
+            "poc": "",
+            "poc_phone": "",
+            "ho": null,
+            "bo": null,
+            "last_date_tested_ts": null,
+            "isenabled": false,
+            "occupancy": null,
+            "lat": 40.63960900,
+            "lng": -74.58431500
+          }, {
+            "id": 23,
+            "key": "23",
+            "alias_id": "VNH",
+            "building_name": "Village Nursing Home",
+            "address1": "607 HUDSON ST",
+            "address2": "",
+            "city": "NEW YORK",
+            "state": "NY",
+            "zip": null,
+            "poc": "Anthony Cruz",
+            "poc_phone": "212-337-9332",
+            "ho": null,
+            "bo": null,
+            "last_date_tested_ts": null,
+            "isenabled": false,
+            "occupancy": null,
+            "lat": 40.73739600,
+            "lng": -74.00616200
+          }]}
           renderItem={({ item }) => <View><Button title={item.building_name} onPress={() => this.props.navigation.navigate('FloorList')} /><Text></Text></View>}
         />
       </View>
@@ -430,7 +486,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fafafa',
     alignItems: 'center',
     justifyContent: 'center'
-  },
+  }
 });
 
 const pass = () => {
