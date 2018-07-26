@@ -96,7 +96,7 @@ class Banner extends Component {
           source={this.props.src}
           style={{ flex: .5 }}
         />
-        <Text> LOREM IPSUM BUILDING 1</Text>
+        <Text style={{ fontWeight: '500'}}> LOREM IPSUM BUILDING 1</Text>
       </View>
     );
   }
@@ -105,7 +105,7 @@ class Banner extends Component {
 class Buttons extends Component {
   render() {
     return (
-      <View style={{ flex: .4, flexDirection: 'row' }}>
+      <View style={{ flex: .4, flexDirection: 'row', paddingTop: 20, paddingBottom: 15 }}>
         <Button
           title="Pass"
           color="#009600"
@@ -126,7 +126,7 @@ class Tag extends Component {
   render() {
     return (
       <View style={{ flex: .2 }}>
-        <Text>MIS-CID-001-C</Text>
+        <Text style={{ fontSize: 20, fontWeight: '400' }}>MIS-CID-001-C</Text>
       </View>
     );
   }
@@ -137,17 +137,19 @@ class DamperInfo extends Component {
     return (
       <View style={{ flex: 5, justifyContent: 'flex-start' }}>
         <Text>Temperature: {this.props.temperature} degrees F</Text>
-        <Text>Wind Speed: {this.props.windSpeed}mph</Text>
+        <Text>Wind Speed: {this.props.windSpeed} mph</Text>
         <Text>Humidity: {this.props.humidity}%</Text>
-        <Text>Altitude: {this.props.altitude}</Text>
+        <Text>Altitude: {this.props.altitude} feet</Text>
         <Text>Location:</Text>
         <Text>1 FOOT WEST OF ELEVATORS THRU NORTH WALL</Text>
         <Text>SOUTH EAST CORRIDOR ROOM 201</Text>
+        <View style={{paddingTop: 10}}>
         <Button
           title="Cycle"
           onPress={cycleDamper}
           style={{ flex: 1 }}
         />
+        </View>
         <Image
           source={this.props.src}
           style={{ flex: 1 }}
@@ -201,7 +203,7 @@ class BuildingScreen extends Component {
         <Text style={styles.select}>Select a Building</Text>
         <FlatList
           data={this.state.dataSource}
-          renderItem={({ item }) => <View><Button title={item.building_name} onPress={() => this.props.navigation.navigate('FloorList')} /><Text></Text></View>}
+          renderItem={({ item }) => <View style={styles.button}><Button title={item.building_name} onPress={() => this.props.navigation.navigate('FloorList')} /><Text></Text></View>}
         />
       </View>
     );
@@ -237,7 +239,7 @@ class FloorScreen extends Component {
         <Text style={styles.select}>Select a Floor</Text>
         <FlatList
           data={this.state.dataSource}
-          renderItem={({ item }) => <View key={item.id}><Button title={item.floor_name} onPress={() => this.props.navigation.navigate('DamperList')} /><Text></Text></View>}
+          renderItem={({ item }) => <View style={styles.button} key={item.id}><Button title={item.floor_name} onPress={() => this.props.navigation.navigate('DamperList')} /><Text></Text></View>}
         />
       </View>
     );
@@ -272,7 +274,7 @@ class DamperScreen extends Component {
         <Text style={styles.select}>Select a Damper to see details</Text>
         <FlatList
           data={this.state.dataSource}
-          renderItem={({ item }) => <View><Button title={item.alias_id + " - " + item.location} onPress={() => this.props.navigation.navigate('Details')} /><Text></Text></View>}
+          renderItem={({ item }) => <View style={styles.button}><Button title={item.alias_id + " - " + item.location} onPress={() => this.props.navigation.navigate('Details')} /><Text></Text></View>}
         />
       </View>
     );
@@ -364,8 +366,13 @@ const styles = StyleSheet.create({
   },
   select: {
     margin: 5,
-    fontWeight: '700'
+    fontWeight: '700',
+    fontSize: 20
+  }, 
+  button: {
+    paddingBottom: 10
   }
+
 });
 
 const pass = () => {
