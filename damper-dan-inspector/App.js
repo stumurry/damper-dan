@@ -98,7 +98,7 @@ class Banner extends Component {
           source={this.props.src}
           style={{ flex: .5 }}
         />*/}
-        <Text style={{ fontWeight: '500' }}> LOREM IPSUM BUILDING 1</Text>
+        <Text style={{ fontWeight: '500' }}>BUILDING 1</Text>
       </View>
     );
   }
