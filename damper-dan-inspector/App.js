@@ -184,7 +184,7 @@ class BuildingScreen extends Component {
     //   });
     return (
       <View style={styles.container}>
-        <Text>Select a Building</Text>
+        <Text style={styles.select}>Select a Building</Text>
         <FlatList
           data={[{
             "id": 1,
@@ -254,7 +254,7 @@ class FloorScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Select a Floor</Text>
+        <Text style={styles.select}>Select a Floor</Text>
         <FlatList
           data={[{
             "id": 952,
@@ -331,7 +331,7 @@ class DamperScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Select a Damper to see details</Text>
+        <Text style={styles.select}>Select a Damper to see details</Text>
         <FlatList
           data={[{
             "id": 952,
@@ -486,6 +486,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fafafa',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  select: {
+    margin: 5,
+    fontWeight: '700'
   }
 });
 
