@@ -173,76 +173,34 @@ class LoginScreen extends Component {
 }
 
 class BuildingScreen extends Component {
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount(){
+    return fetch('https://bqdor7fpq8.execute-api.us-east-1.amazonaws.com/prod/')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          dataSource: responseJson,
+        }, function(){
+
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+
   render() {
-    // var buildingJSON = fetch('https://bqdor7fpq8.execute-api.us-east-1.amazonaws.com/prod/')
-    //   .then((response) => response.json())
-    //   .then((responseJson) => {
-    //     return responseJson;
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
     return (
       <View style={styles.container}>
         <Text>Select a Building</Text>
         <FlatList
-          data={[{
-            "id": 1,
-            "key": "1",
-            "alias_id": "RH",
-            "building_name": "Rivington",
-            "address1": "45 Rivington St.",
-            "address2": "",
-            "city": "New York",
-            "state": "NY ",
-            "zip": null,
-            "poc": "Jerome Lucas",
-            "poc_phone": "212-539-6258",
-            "ho": null, "bo": null,
-            "last_date_tested_ts": null,
-            "isenabled": false,
-            "occupancy": null,
-            "lat": 40.72069500,
-            "lng": -73.99112900
-          }, {
-            "id": 3,
-            "key": "3",
-            "alias_id": "BR",
-            "building_name": "Basking Ridge",
-            "address1": "136 Mountainview Blvd",
-            "address2": "",
-            "city": "Basking Ridge",
-            "state": "NJ",
-            "zip": "07920",
-            "poc": "",
-            "poc_phone": "",
-            "ho": null,
-            "bo": null,
-            "last_date_tested_ts": null,
-            "isenabled": false,
-            "occupancy": null,
-            "lat": 40.63960900,
-            "lng": -74.58431500
-          }, {
-            "id": 23,
-            "key": "23",
-            "alias_id": "VNH",
-            "building_name": "Village Nursing Home",
-            "address1": "607 HUDSON ST",
-            "address2": "",
-            "city": "NEW YORK",
-            "state": "NY",
-            "zip": null,
-            "poc": "Anthony Cruz",
-            "poc_phone": "212-337-9332",
-            "ho": null,
-            "bo": null,
-            "last_date_tested_ts": null,
-            "isenabled": false,
-            "occupancy": null,
-            "lat": 40.73739600,
-            "lng": -74.00616200
-          }]}
+          data={this.state.dataSource}
           renderItem={({ item }) => <View><Button title={item.building_name} onPress={() => this.props.navigation.navigate('FloorList')} /><Text></Text></View>}
         />
       </View>
@@ -251,76 +209,35 @@ class BuildingScreen extends Component {
 }
 
 class FloorScreen extends Component {
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount(){
+    return fetch('https://d0l131z8pi.execute-api.us-east-1.amazonaws.com/prod?buildingid=27')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          dataSource: responseJson,
+        }, function(){
+
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text>Select a Floor</Text>
         <FlatList
-          data={[{
-            "id": 952,
-            "key": "18",
-            "floor_id": 74,
-            "building_id": 11,
-            "alias_id": "SC-FD-001-2",
-            "sizel": 0,
-            "sizew": 0,
-            "system": "Ahu",
-            "systemtype": null,
-            "location": "Southeast main corridor",
-            "sublocation": "4 feet west of s-223",
-            "dampernumber": 1,
-            "series": 0,
-            "date_tested_ts": "2013-09-16T00:00:00",
-            "repair_date": null,
-            "comments": "5/6/09-No access door found",
-            "isenabled": false,
-            "next_test_date": "2019-09-16T00:00:00",
-            "occupancy": "HEALTH_CARE",
-            "special_procedures": ""
-          }, {
-            "id": 12923,
-            "key": "181",
-            "floor_id": 74,
-            "building_id": 11,
-            "alias_id": "SC-FD-001-2",
-            "sizel": 0,
-            "sizew": 0,
-            "system": "Ahu",
-            "systemtype": null,
-            "location": "Southeast west corridor",
-            "sublocation": "4 feet west of s-223",
-            "dampernumber": 1,
-            "series": 0,
-            "date_tested_ts": "2013-09-16T00:00:00",
-            "repair_date": null,
-            "comments": "5/6/09-No access door found",
-            "isenabled": false,
-            "next_test_date": "2019-09-16T00:00:00",
-            "occupancy": "HEALTH_CARE",
-            "special_procedures": ""
-          }, {
-            "id": 12091,
-            "key": "182",
-            "floor_id": 74,
-            "building_id": 11,
-            "alias_id": "SC-FD-001-2",
-            "sizel": 0,
-            "sizew": 0,
-            "system": "Ahu",
-            "systemtype": null,
-            "location": "Southwest main corridor",
-            "sublocation": "4 feet west of s-223",
-            "dampernumber": 1,
-            "series": 0,
-            "date_tested_ts": "2013-09-16T00:00:00",
-            "repair_date": null,
-            "comments": "5/6/09-No access door found",
-            "isenabled": false,
-            "next_test_date": "2019-09-16T00:00:00",
-            "occupancy": "HEALTH_CARE",
-            "special_procedures": ""
-          }]}
-          renderItem={({ item }) => <View><Button title={"Building: " + item.floor_id + " - Location: " + item.location} onPress={() => this.props.navigation.navigate('DamperList')} /><Text></Text></View>}
+          data={this.state.dataSource}
+          renderItem={({ item }) => <View key={item.id}><Button title={item.floor_name} onPress={() => this.props.navigation.navigate('DamperList')} /><Text></Text></View>}
         />
       </View>
     );
@@ -328,76 +245,34 @@ class FloorScreen extends Component {
 }
 
 class DamperScreen extends Component {
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount(){
+    return fetch('https://fwolhnn6u7.execute-api.us-east-1.amazonaws.com/prod/?floorid=179')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          dataSource: responseJson,
+        }, function(){
+
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text>Select a Damper to see details</Text>
         <FlatList
-          data={[{
-            "id": 952,
-            "key": "1",
-            "floor_id": 74,
-            "building_id": 11,
-            "alias_id": "SC-FD-001-2",
-            "sizel": 0,
-            "sizew": 0,
-            "system": "Ahu",
-            "systemtype": null,
-            "location": "Southeast main corridor",
-            "sublocation": "4 feet west of s-223",
-            "dampernumber": 1,
-            "series": 0,
-            "date_tested_ts": "2013-09-16T00:00:00",
-            "repair_date": null,
-            "comments": "5/6/09-No access door found",
-            "isenabled": false,
-            "next_test_date": "2019-09-16T00:00:00",
-            "occupancy": "HEALTH_CARE",
-            "special_procedures": ""
-          }, {
-            "id": 1293,
-            "key": "12",
-            "floor_id": 74,
-            "building_id": 11,
-            "alias_id": "SC-FD-001-2",
-            "sizel": 0,
-            "sizew": 0,
-            "system": "Ahu",
-            "systemtype": null,
-            "location": "Southeast Side corridor",
-            "sublocation": "4 feet west of s-223",
-            "dampernumber": 1,
-            "series": 0,
-            "date_tested_ts": "2013-09-16T00:00:00",
-            "repair_date": null,
-            "comments": "5/6/09-No access door found",
-            "isenabled": false,
-            "next_test_date": "2019-09-16T00:00:00",
-            "occupancy": "HEALTH_CARE",
-            "special_procedures": ""
-          }, {
-            "id": 9521221,
-            "key": "123",
-            "floor_id": 74,
-            "building_id": 11,
-            "alias_id": "SC-FD-001-2",
-            "sizel": 0,
-            "sizew": 0,
-            "system": "Ahu",
-            "systemtype": null,
-            "location": "Southwest main corridor",
-            "sublocation": "4 feet west of s-223",
-            "dampernumber": 1,
-            "series": 0,
-            "date_tested_ts": "2013-09-16T00:00:00",
-            "repair_date": null,
-            "comments": "5/6/09-No access door found",
-            "isenabled": false,
-            "next_test_date": "2019-09-16T00:00:00",
-            "occupancy": "HEALTH_CARE",
-            "special_procedures": ""
-          }]}
-          renderItem={({ item }) => <View><Button title={"Floor: " + item.floor_id + " - Location: " + item.location} onPress={() => this.props.navigation.navigate('Details')} /><Text></Text></View>}
+          data={this.state.dataSource}
+          renderItem={({ item }) => <View><Button title={item.alias_id + " - " + item.location} onPress={() => this.props.navigation.navigate('Details')} /><Text></Text></View>}
         />
       </View>
     );
@@ -452,8 +327,8 @@ class DetailsScreen extends Component {
           humidity={this.state.humidity}
         />
         <Button
-          title="Go to Login Page"
-          onPress={() => this.props.navigation.navigate('Login')}
+          title="Go back to Buildings Page"
+          onPress={() => this.props.navigation.navigate('BuildingList')}
           style={{ flex: 1 }}
         />
       </View>
