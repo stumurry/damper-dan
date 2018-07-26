@@ -51,7 +51,7 @@ pubnub.addListener({
 });
 
 pubnub.subscribe({
-  channels: ['DamperDan'],
+  channels: ['MN-FD-002C-B'],
   callback: function (message) {
     console.log('hi');
   }

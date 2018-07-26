@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/damper-dan-client-server/damper-dan-client-server.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
